@@ -1,0 +1,25 @@
+{
+  "name": "aws-typescript-with-no-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "save": "^2.4.0",
+    "source-map-support": "^0.5.20"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "serverless-plugin-typescript": "^2.1.0",
+    "typescript": "^4.4.4"
+  },
+  "scripts": {
+    "dev": "cross-env SLS_DEBUG=* serverless offline --noAuth",
+    "dev:prod": "cross-env SLS_DEBUG=* SKIP_AUTH=true serverless offline --noAuth --stage=prod",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --fix --ext .ts",
+    "tsc": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
