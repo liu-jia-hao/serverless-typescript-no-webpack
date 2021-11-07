@@ -1,4 +1,4 @@
-service: serverless-webpack-typescript-example
+service: serverless-api
 frameworkVersion: '2.61.0'
 
 plugins:
@@ -16,13 +16,11 @@ functions:
     events:
       - httpApi:
           method: get
-          path: hello
-          integration: lambda
+          path: /hello
   imagePresignedURL:
     handler: controllers/images.getPresignedURL
     events:
       - httpApi:
           method: get
-          path: image/presigned-url
-          intergration: lambda
+          path: /image/presigned-url
   
