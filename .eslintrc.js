@@ -4,6 +4,7 @@ const env = {
 };
 
 const rules = {
+  'import/first': 'off',
   'max-classes-per-file': ['error', 20],
   'no-underscore-dangle': [
     'error',

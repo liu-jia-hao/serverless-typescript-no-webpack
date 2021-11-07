@@ -18,3 +18,11 @@ functions:
           method: get
           path: hello
           integration: lambda
+  imagePresignedURL:
+    handler: controllers/images.getPresignedURL
+    events:
+      - httpApi:
+          method: get
+          path: image/presigned-url
+          intergration: lambda
+  
