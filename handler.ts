@@ -1,6 +1,6 @@
-export const hello = () => {
+export const hello = async () => {
     return {
-        statusCode: 300,
+        statusCode: 200,
         body: 'hello',
     }
 };
