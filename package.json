@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env SLS_DEBUG=* SKIP_AUTH=true serverless offline",
+    "dev": "cross-env SLS_DEBUG=* serverless offline",
+    "dev:skipauth": "cross-env SLS_DEBUG=* SKIP_AUTH=true serverless offline",
     "dev:prod": "cross-env SLS_DEBUG=* SKIP_AUTH=true serverless offline --stage=prod",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --fix --ext .ts",
