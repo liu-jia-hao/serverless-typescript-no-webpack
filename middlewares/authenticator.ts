@@ -1,5 +1,5 @@
 import createHttpError from 'http-errors';
-import { APIGatewayProxyEvent } from 'aws-lambda';
+import type { APIGatewayProxyEvent } from 'aws-lambda';
 import { firebaseAdmin } from '../helpers/gcp';
 
 export type AuthedEvent = APIGatewayProxyEvent & {
@@ -10,13 +10,10 @@ export type AuthedEvent = APIGatewayProxyEvent & {
   };
 };
 
-interface Request {
-  event: AuthedEvent | undefined;
-}
 export default () => ({
-  before: async (request: Request) => {
+  before: async (request: { event: any }) => {
     try {
-      const { event = {} } = request;
+      const { event } = request;
       event.loggedInUser = {};
       if (process.env.SKIP_AUTH === 'true') {
         event.loggedInUser.sub = process.env.LOGGED_IN_USER_SUB;
