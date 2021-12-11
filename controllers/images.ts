@@ -18,10 +18,9 @@ export const getPresignedURL = middy(
     const presignedUrl = await createAmazonS3PresignedURL(authedUserId);
     return { body: presignedUrl, statusCode: 200 };
   },
-);
-
-getPresignedURL.use(cors());
-getPresignedURL.use(httpEventNormalizer());
-getPresignedURL.use(responseSerializer);
-getPresignedURL.use(httpJsonBodyParser());
-getPresignedURL.use(authenticator());
+)
+  .use(cors())
+  .use(httpEventNormalizer())
+  .use(responseSerializer)
+  .use(httpJsonBodyParser())
+  .use(authenticator());

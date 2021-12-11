@@ -1,5 +1,6 @@
 import createHttpError from 'http-errors';
 import type { APIGatewayProxyEvent } from 'aws-lambda';
+import type middy from '@middy/core';
 import { firebaseAdmin } from '../helpers/gcp';
 
 export type AuthedEvent = APIGatewayProxyEvent & {
@@ -11,7 +12,7 @@ export type AuthedEvent = APIGatewayProxyEvent & {
 };
 
 export default () => ({
-  before: async (request: { event: any }) => {
+  before: async (request: middy.Request) => {
     try {
       const { event } = request;
       event.loggedInUser = {};
