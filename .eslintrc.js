@@ -4,6 +4,7 @@ const env = {
 };
 
 const rules = {
+  'import/prefer-default-export': 'off',
   'import/first': 'off',
   'max-classes-per-file': ['error', 20],
   'no-underscore-dangle': [
@@ -67,14 +68,6 @@ module.exports = {
       files: ['*.js'],
       env,
       extends: ['airbnb-base'],
-      parserOptions,
-      rules,
-    },
-    {
-      files: ['*.json'],
-      env,
-      extends: ['airbnb-base'],
-      plugins: ['json-format'],
       parserOptions,
       rules,
     },
