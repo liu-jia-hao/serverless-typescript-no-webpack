@@ -9,13 +9,5 @@
       "skipFiles": ["<node_internals>/**"],
       "type": "node"
     },
-    {
-      "name": "aws-sls-no-auth",
-      "request": "launch",
-      "runtimeArgs": ["run", "dev:no-auth"],
-      "runtimeExecutable": "npm",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node"
-    }
   ]
 }

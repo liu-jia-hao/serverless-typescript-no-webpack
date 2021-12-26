@@ -4,6 +4,7 @@ const env = {
 };
 
 const rules = {
+  'consistent-return': 'off',
   'import/prefer-default-export': 'off',
   'import/first': 'off',
   'max-classes-per-file': ['error', 20],
@@ -62,6 +63,8 @@ module.exports = {
     ...rules,
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
   },
   overrides: [
     {
